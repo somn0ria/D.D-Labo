@@ -17,17 +17,22 @@
 
 <div class="container">
 
+<!--時計-->
     <div class="clock">
         <h1 id="time">00:00</h1>
         <p id="date">Monday</p>
     </div>
 
+<!--ホーム画面-->
+    <div id="home-screen">
+
+<!--プロフィール-->
     <button class="profile-note" type="button">
     <span>PROFILE</span>
 </button>
 
+<!--フォルダ-->
     <div class="side-actions">
-
     <button class="folder-button folder-record" type="button">
         <span class="folder-border"></span>
         <span class="folder-paper"></span>
@@ -47,10 +52,9 @@
             <span class="folder-label">観察</span>
         </span>
     </button>
-    
-
 </div>
 
+<!--レベル-->
 <div class="level-meter">
     <div class="level-tube">
         <div class="level-liquid" id="level-liquid"></div>
@@ -73,6 +77,7 @@
     <div class="level-label" id="level-label">Lv.33</div>
 </div>
 
+<!--キャラ-->
 <div class="character">
         <img 
         id="character-image"
@@ -83,15 +88,17 @@
         <div class="signal-line" aria-hidden="true"></div>
 </div>
 
-    <div class="menu">
-
-        <button>勉強</button>
-        <button>読書</button>
-        <button>趣味</button>
-        <button>TASK</button>
+<!--メニュー-->
+   <div class="menu">
+    <button class="mode-button" data-mode="study">勉強</button>
+    <button class="mode-button" data-mode="reading">読書</button>
+    <button class="mode-button" data-mode="hobby">趣味</button>
+    <button class="mode-button" data-mode="task">TASK</button>
+</div>
 
     </div>
 
+<!--セリフ-->
     <div class="dialog" id="dialog">
 
     <div class="dialog-titlebar">
@@ -104,8 +111,346 @@
         <span id="message-text"></span>
         <span id="typing-cursor"></span>
     </div>
+    </div>
+
+
+<!--タイマー画面-->
+    <div id="timer-screen" class="hidden">
+
+        <button id="timer-back" class="timer-back">
+            ← 戻る
+        </button>
+
+
+        <div class="timer-setting">
+
+            <div class="timer-title">
+                集中時間を設定
+            </div>
+
+           <div class="timer-values">
+
+    <div class="duration-setting">
+        <input
+            id="duration-input"
+            type="number"
+            min="1"
+            max="720"
+            value="60"
+        >
+        <span class="timer-unit">min</span>
+    </div>
+
+    <div class="end-setting">
+        <input
+            id="end-hour-input"
+            type="number"
+            min="0"
+            max="23"
+            value="17"
+        >
+
+        <span class="time-colon">:</span>
+
+        <input
+            id="end-minute-input"
+            type="number"
+            min="0"
+            max="59"
+            value="30"
+        >
+
+        <span class="timer-unit">まで</span>
+    </div>
+</div>
+
+            <button id="timer-start" class="timer-start">
+                START
+            </button>
+
+        </div>
+    </div>
+    
+        <div id="running-screen" class="running-screen hidden">
+
+            <div class="running-until">
+                until
+                <span id="running-end-time">17:30</span>
+            </div>
+
+            <div id="countdown">
+                60:00
+            </div>
+
+           
+
+            <button id="timer-finish" class="timer-finish">
+                FINISH
+            </button>
 
 </div>
+</div>
+
+ <!-- 途中終了確認ポップ -->
+<div id="finish-modal" class="finish-modal hidden">
+
+    <div class="finish-overlay"></div>
+
+    <div class="finish-box">
+
+        <div class="finish-titlebar">
+            <button id="finish-modal-close" class="finish-modal-close">×</button>
+        </div>
+
+        <div class="finish-message">
+            ⚠️終了しますか？
+        </div>
+
+        <div class="finish-actions">
+
+            <button id="finish-yes" class="finish-choice">
+                はい
+            </button>
+
+            <button id="finish-cancel" class="finish-choice">
+                Cancel
+            </button>
+        </div>
+    </div>
+</div>
+
+<!--記録画面-->
+<section id="record-screen" class="record-screen hidden">
+
+    <header class="record-header">
+
+        <button id="record-back" class="record-back">
+            ←戻る
+        </button>
+
+        <h2>記録</h2>
+
+        <div class="record-header-actions">
+            <button id="record-add" class="record-icon-button">＋</button>
+            <button id="record-search" class="record-icon-button">⌕</button>
+        </div>
+
+    </header>
+
+
+    <nav class="record-tabs">
+
+        <button class="record-tab active" data-filter="all">ALL</button>
+        <button class="record-tab" data-filter="study">勉強</button>
+        <button class="record-tab" data-filter="reading">読書</button>
+        <button class="record-tab" data-filter="hobby">趣味</button>
+        <button class="record-tab" data-filter="task">TASK</button>
+
+    </nav>
+
+
+    <main id="record-list" class="record-list"></main>
+
+</section>
+
+<!-- ================================
+     記録検索ポップ
+================================ -->
+
+<div id="record-search-modal" class="record-search-modal hidden">
+
+    <div class="record-search-overlay"></div>
+
+    <div class="record-search-paper">
+
+        <div class="record-search-fold"></div>
+
+        <h2>確認</h2>
+
+        <div class="search-wheel-area">
+
+    <div id="search-year-column" class="search-wheel-column"></div>
+
+    <div class="search-wheel-separator">/</div>
+
+    <div id="search-month-column" class="search-wheel-column"></div>
+
+    <div class="search-wheel-separator">/</div>
+
+    <div id="search-day-column" class="search-wheel-column"></div>
+
+    <div class="search-wheel-selection"></div>
+
+</div>
+
+        <div class="record-search-actions">
+
+            <button id="record-search-execute">
+                検索
+            </button>
+
+            <button id="record-search-cancel">
+                Cancel
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- 記録をタップした時のメニュー -->
+<div id="record-action-modal" class="record-action-modal hidden">
+
+    <div class="record-action-overlay"></div>
+
+    <div class="record-action-box">
+
+        <div id="record-action-info" class="record-action-info">
+            勉強 60min<br>
+            2026/08/12 15:40-16:40
+        </div>
+
+        <div class="record-action-buttons">
+            <button id="record-edit-button">編集</button>
+            <button id="record-delete-button">削除</button>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- 記録削除確認 -->
+<div id="record-delete-modal" class="finish-modal hidden">
+
+    <div class="finish-overlay"></div>
+
+    <div class="finish-box">
+
+        <div class="finish-titlebar">
+            <button
+                id="record-delete-close"
+                class="finish-modal-close"
+                type="button"
+            >
+                ×
+            </button>
+        </div>
+
+        <div class="finish-message">
+            ⚠️削除しますか？
+        </div>
+
+        <div class="finish-actions">
+
+            <button
+                id="record-delete-yes"
+                class="finish-choice"
+                type="button"
+            >
+                はい
+            </button>
+
+            <button
+                id="record-delete-cancel"
+                class="finish-choice"
+                type="button"
+            >
+                Cancel
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!--記録追加・編集-->
+<div id="record-editor" class="record-editor hidden">
+
+    <div id="record-editor-overlay" class="record-editor-overlay"></div>
+
+    <div class="record-paper">
+
+        <div class="record-paper-fold"></div>
+
+        <h2 id="record-editor-title">＋記録</h2>
+
+
+        <button class="record-field" data-field="genre">
+            <span>ジャンル:</span>
+            <strong id="edit-genre">勉強</strong>
+        </button>
+
+
+        <button class="record-field" data-field="date">
+            <span>DATE:</span>
+            <strong id="edit-date">2026/08/12</strong>
+        </button>
+
+
+        <button class="record-field" data-field="start">
+            <span>START:</span>
+            <strong id="edit-start">15:40</strong>
+        </button>
+
+
+        <button class="record-field" data-field="finish">
+            <span>FINISH:</span>
+            <strong id="edit-finish">16:40</strong>
+        </button>
+
+
+        <div class="record-editor-actions">
+
+            <button id="record-save">保存</button>
+            <button id="record-editor-cancel">Cancel</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ジャンル選択ホイール -->
+<div id="genre-wheel-modal" class="genre-wheel-modal hidden">
+
+    <div class="genre-wheel-overlay"></div>
+
+    <div class="genre-wheel-panel">
+
+        <div class="wheel-title">ジャンル</div>
+
+        <div class="genre-wheel">
+            <div class="genre-wheel-item">勉強</div>
+            <div class="genre-wheel-item">読書</div>
+            <div class="genre-wheel-item">趣味</div>
+            <div class="genre-wheel-item">TASK</div>
+        </div>
+
+        <div class="wheel-selection"></div>
+
+    </div>
+
+</div>
+
+<!-- DATE / START / FINISH 共通ホイール -->
+<div id="datetime-wheel-modal" class="datetime-wheel-modal hidden">
+
+    <div class="datetime-wheel-overlay"></div>
+
+    <div class="datetime-wheel-panel">
+
+        <div id="datetime-wheel-title" class="datetime-wheel-title">
+            DATE
+        </div>
+
+        <div id="datetime-wheel-columns" class="datetime-wheel-columns">
+        </div>
+
+        <div class="datetime-selection-band"></div>
+
+    </div>
 
 </div>
 

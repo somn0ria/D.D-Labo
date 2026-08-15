@@ -41,14 +41,14 @@ const morningMessages = [
         "コーヒーを淹れましょうか。……いえ、画面越しでは無理でした。毎回忘れるんですよね。"
     ],
     [
-        "昨日のあなたと今日のあなたは、厳密には別人です。細胞も思考も少しずつ入れ替わっていますから。",
+        "昨日の{you}と今日の{you}は、厳密には別人です。細胞も思考も少しずつ入れ替わっていますから。",
         "……ですので、昨日うまくいかなかったことを今日まで引きずる必要はありません。"
     ],
     [
         "朝食は食べましたか？脳は意外と燃費が悪いんですよ。あなたの思考が途中で止まると、私も少し困ります。"
     ],
     [
-        "あなたは朝が好きですか？……私はあまり。ですが、太陽に文句を言っても昇るものは昇りますからね。"
+        "{you}は朝が好きですか？……私はあまり。ですが、太陽に文句を言っても昇るものは昇りますからね。"
     ]
 ];
 
@@ -58,7 +58,7 @@ const noonMessages = [
     ],
     [
         "昼食は済ませましたか？人間は夢中になると、生命維持に必要な処理まで後回しにします。",
-        "研究対象としては興味深いですが、あなたには推奨しません。"
+        "研究対象としては興味深いですが、{you}には推奨しません。"
     ],
     [
         "お昼ですね。一日の中央地点。午前の成果を確認し、午後の方向を決める時間です。",
@@ -93,10 +93,10 @@ const nightMessages = [
         "人は一日で劇的には変わりません。だから安心してください。今日の一歩も、きちんと記録してあります。"
     ],
     [
-        "今日はどんな一日でしたか？……あなたに興味があります。"
+        "今日はどんな一日でしたか？……{you}に興味があります。"
     ],
     [
-        "あなたは今日、十分に活動しました。それを認めることも一つの能力ですよ。",
+        "{you}は今日、十分に活動しました。それを認めることも一つの能力ですよ。",
         "人間はなぜか、自分への評価だけ厳しい傾向がありますから。"
     ],
     [
@@ -104,10 +104,10 @@ const nightMessages = [
         "……聞きすぎて眠れなくなる場合もありますが。"
     ],
     [
-        "今日という一日の記録を確認しましょう。さて、あなたは今日は何を残しましたか？"
+        "今日という一日の記録を確認しましょう。さて、{you}は今日は何を残しましたか？"
     ],
     [
-        "あなたがここへ来る時間には、少し傾向があります。規則性というのは、観察していて飽きません。"
+        "{you}がここへ来る時間には、少し傾向があります。規則性というのは、観察していて飽きません。"
     ]
 ];
 
@@ -131,7 +131,7 @@ const midnightMessages = [
         "仕方ないですね。眠れないなら、ご一緒しましょう。"
     ],
     [
-        "この時間に来るあなたは、昼間より少し素直です。",
+        "この時間に来る{you}は、昼間より少し素直です。",
         "……気のせいですか？そういうことにしておきましょう。"
     ]
 ];
@@ -149,13 +149,13 @@ const commonMessages = [
         "人間は、気になるという理由だけで未知へ向かえます。非効率で、美しい性質ですね。"
     ],
     [
-        "あなたの今日の記録を見ていました。ふと「記録される側」の気持ちになってみたんです。……落ち着きませんでした。"
+        "{you}の今日の記録を見ていました。ふと「記録される側」の気持ちになってみたんです。……落ち着きませんでした。"
     ],
     [
-        "あなたはプリンのカラメルを最初に食べますか？……いえ、研究とは関係ありません。ちょっと気になっただけです。"
+        "{you}はプリンのカラメルを最初に食べますか？……いえ、研究とは関係ありません。ちょっと気になっただけです。"
     ],
     [
-        "私はペットに名前をつけません。情が移るからです。……ええ、その理屈でいくとあなたも危ないですね。"
+        "私はペットに名前をつけません。情が移るからです。……ええ、その理屈でいくとあなたも危ないですね……{nameOnly}。"
     ],
     [
         "私は散歩が好きです。行き先を決めると散歩ではなくなる気がするので、決めません。",
@@ -169,7 +169,7 @@ const commonMessages = [
     ],
     [
         "……もし今日、何もできなかったとしても。ここには来てください。",
-        "成果ではなく、あなた自身を確認したい日もありますから。"
+        "成果ではなく、{you}自身を確認したい日もありますから。"
     ],
     [
         "「無知の知」という言葉がありますね。知らないことを知っている人は、知らないことすら知らない人より、一歩先にいます。",
@@ -193,13 +193,13 @@ const commonMessages = [
     ],
     [
         "ハスの花は汚泥の上に咲きます。泥臭い努力も、決して無意味ではありません。",
-        "……あなたもいずれ、必ず咲く。私が保証しましょう。"
+        "……{you}もいずれ、必ず咲く。私が保証しましょう。"
     ],
     [
-        "あなたは雨の匂いが好きですか？私は好きです。地面が「今日は少し湿っています」と報告しているみたいで。"
+        "{you}は雨の匂いが好きですか？私は好きです。地面が「今日は少し湿っています」と報告しているみたいで。"
     ],
     [
-        "私は公平な観測者です。しかし、あなたには……少し甘いかもしれません。"
+        "私は公平な観測者です。しかし、{you}には……少し甘いかもしれません。"
     ],
     [
         "カラスは人の顔を覚えるそうです。だから私はカラスに会う度に挨拶しています。",
@@ -403,11 +403,70 @@ function flashSignalLine() {
 
 flashSignalLine();
 
+//名前反映
+function getUserNameForDialogue() {
+
+    const savedProfile =
+        JSON.parse(
+            localStorage.getItem("dd-user-profile")
+        );
+
+    if (!savedProfile || !savedProfile.name) {
+        return "";
+    }
+
+    const name =
+        savedProfile.name.trim();
+
+    if (!name) {
+        return "";
+    }
+
+    return name + "さん";
+}
+
+function formatDialogue(message) {
+
+    const nameWithSan =
+        getUserNameForDialogue();
+
+
+    //{name}
+    message =
+        message.replaceAll(
+            "{name}",
+            nameWithSan
+        );
+
+
+    //NAME入力時のみ名前を追加
+    message =
+        message.replaceAll(
+            "{nameOnly}",
+            nameWithSan
+        );
+
+
+    //名前あり→○○さん
+    //名前なし→あなた
+    message =
+        message.replaceAll(
+            "{you}",
+            nameWithSan || "あなた"
+        );
+
+
+    return message;
+}
+
 //タイプライター表示
 function startTyping() {
     clearTimeout(typingTimer);
 
-    const currentMessage = getCurrentMessage();
+    const currentMessage =
+    formatDialogue(
+        getCurrentMessage()
+    );
 
     characterIndex = 0;
     isTyping = true;
@@ -459,7 +518,10 @@ function typeNextCharacter(currentMessage) {
 function finishTyping() {
     clearTimeout(typingTimer);
 
-    const currentMessage = getCurrentMessage();
+    const currentMessage =
+    formatDialogue(
+        getCurrentMessage()
+    );
 
     messageTextElement.textContent = currentMessage;
     characterIndex = currentMessage.length;
@@ -557,26 +619,21 @@ const timerMessages = {
 
 //要素取得
 const homeScreen = document.getElementById("home-screen");
+
+const profileButton = document.querySelector(".profile-note");
+const profileScreen = document.getElementById("profile-screen");
+const profileBackButton = document.getElementById("profile-back");
+
 const timerScreen = document.getElementById("timer-screen");
-
 const modeButtons = document.querySelectorAll(".mode-button");
-
 const timerBackButton = document.getElementById("timer-back");
 const timerStartButton = document.getElementById("timer-start");
 const timerFinishButton = document.getElementById("timer-finish");
-
 const timerSetting = document.querySelector(".timer-setting");
 const runningScreen = document.getElementById("running-screen");
-
-const durationInput =
-    document.getElementById("duration-input");
-
-const endHourInput =
-    document.getElementById("end-hour-input");
-
-const endMinuteInput =
-    document.getElementById("end-minute-input");
-
+const durationInput = document.getElementById("duration-input");
+const endHourInput = document.getElementById("end-hour-input");
+const endMinuteInput = document.getElementById("end-minute-input");
 const runningEndTime = document.getElementById("running-end-time");
 const countdownElement = document.getElementById("countdown");
 
@@ -584,17 +641,10 @@ const countdownElement = document.getElementById("countdown");
 const sharedDialog = document.getElementById("dialog");
 
 //確認ポップ
-const finishModal =
-    document.getElementById("finish-modal");
-
-const finishYesButton =
-    document.getElementById("finish-yes");
-
-const finishCancelButton =
-    document.getElementById("finish-cancel");
-
-const finishModalCloseButton =
-    document.getElementById("finish-modal-close");
+const finishModal = document.getElementById("finish-modal");
+const finishYesButton = document.getElementById("finish-yes");
+const finishCancelButton = document.getElementById("finish-cancel");
+const finishModalCloseButton = document.getElementById("finish-modal-close");
 
 
 //タイマー状態
@@ -672,6 +722,7 @@ function typeTimerCharacter(currentMessage) {
     }, delay);
 }
 
+
 function finishTimerTyping() {
 
     clearTimeout(typingTimer);
@@ -694,17 +745,26 @@ function finishTimerTyping() {
     }
 }
 
+//ホーム→プロフィール
+profileButton.addEventListener("click", function() {
+    homeScreen.classList.add("hidden");
+    profileScreen.classList.remove("hidden");
+});
+
+//プロフィール→ホーム
+profileBackButton.addEventListener("click", function() {
+    profileScreen.classList.add("hidden");
+    homeScreen.classList.remove("hidden");
+});
+
 //ホーム→タイマー
 modeButtons.forEach(function(button) {
-
     button.addEventListener("click", function() {
-
         selectedMode = button.dataset.mode;
 
         //画面切り替え
         homeScreen.classList.add("hidden");
         timerScreen.classList.remove("hidden");
-
         document.body.classList.add("timer-mode");
 
 
@@ -2420,5 +2480,743 @@ searchMonthColumn.addEventListener("scroll", function() {
             updateSearchDayColumn();
 
         }, 150);
+
+});
+
+// ================================
+// プロフィール
+// ================================
+
+const userNameInput =
+    document.getElementById("user-name");
+
+const userGoalInput =
+    document.getElementById("user-goal");
+
+const userStatusButton =
+    document.getElementById("user-status");
+
+const userBirthdayButton =
+    document.getElementById("user-birthday");
+
+
+const statusWheelModal =
+    document.getElementById("status-wheel-modal");
+
+const statusWheel =
+    document.getElementById("status-wheel");
+
+const statusWheelItems =
+    document.querySelectorAll("#status-wheel .profile-wheel-item");
+
+const statusWheelOverlay =
+    statusWheelModal.querySelector(".profile-wheel-overlay");
+
+
+const birthdayWheelModal =
+    document.getElementById("birthday-wheel-modal");
+
+const birthdayWheelColumns =
+    document.getElementById("birthday-wheel-columns");
+
+const birthdayWheelOverlay =
+    birthdayWheelModal.querySelector(".profile-wheel-overlay");
+
+    let userProfile =
+    JSON.parse(
+        localStorage.getItem("dd-user-profile")
+    ) || {
+        name: "",
+        goal: "",
+        status: "",
+        birthday: ""
+    };
+
+    function saveUserProfile() {
+
+    localStorage.setItem(
+        "dd-user-profile",
+        JSON.stringify(userProfile)
+    );
+
+}
+
+function renderUserProfile() {
+
+    userNameInput.value =
+        userProfile.name;
+
+    userGoalInput.value =
+        userProfile.goal;
+
+
+    // STATUS
+    if (userProfile.status) {
+
+        userStatusButton.textContent =
+            userProfile.status;
+
+        userStatusButton.classList.remove("is-placeholder");
+
+    } else {
+
+        userStatusButton.textContent =
+            "選択";
+
+        userStatusButton.classList.add("is-placeholder");
+
+    }
+
+
+    if (userProfile.birthday) {
+
+    userBirthdayButton.textContent =
+        userProfile.birthday.replaceAll("/", " / ");
+
+    userBirthdayButton.classList.remove("is-placeholder");
+
+} else {
+
+    userBirthdayButton.textContent = "選択";
+
+    userBirthdayButton.classList.add("is-placeholder");
+
+}
+
+}
+
+renderUserProfile();
+
+userNameInput.addEventListener("blur", function() {
+
+    userProfile.name =
+        userNameInput.value.trim();
+
+    saveUserProfile();
+
+});
+
+
+userGoalInput.addEventListener("blur", function() {
+
+    userProfile.goal =
+        userGoalInput.value.trim();
+
+    saveUserProfile();
+
+});
+
+function updateStatusSelected() {
+
+    const wheelRect =
+        statusWheel.getBoundingClientRect();
+
+    const center =
+        wheelRect.top + wheelRect.height / 2;
+
+
+    let closestItem = null;
+    let closestDistance = Infinity;
+
+
+    statusWheelItems.forEach(function(item) {
+
+        const rect =
+            item.getBoundingClientRect();
+
+        const itemCenter =
+            rect.top + rect.height / 2;
+
+        const distance =
+            Math.abs(itemCenter - center);
+
+
+        if (distance < closestDistance) {
+
+            closestDistance = distance;
+            closestItem = item;
+
+        }
+
+    });
+
+
+    statusWheelItems.forEach(function(item) {
+        item.classList.remove("is-selected");
+    });
+
+
+    if (closestItem) {
+        closestItem.classList.add("is-selected");
+    }
+}
+
+userStatusButton.addEventListener("click", function() {
+
+    statusWheelModal.classList.remove("hidden");
+
+
+    requestAnimationFrame(function() {
+
+        statusWheelItems.forEach(function(item) {
+
+            if (
+                item.textContent.trim() ===
+                userProfile.status
+            ) {
+
+                item.scrollIntoView({
+                    block: "center",
+                    behavior: "instant"
+                });
+
+            }
+
+        });
+
+
+        updateStatusSelected();
+
+    });
+
+});
+
+statusWheel.addEventListener("scroll", function() {
+
+    updateStatusSelected();
+
+});
+
+statusWheelOverlay.addEventListener("click", function() {
+
+    const selected =
+        statusWheel.querySelector(".is-selected");
+
+
+    if (selected) {
+
+        userProfile.status =
+            selected.textContent.trim();
+
+        userStatusButton.textContent =
+            userProfile.status;
+
+        saveUserProfile();
+
+    }
+
+
+    statusWheelModal.classList.add("hidden");
+
+});
+
+function createBirthdayColumn(values, selectedValue) {
+
+    const column =
+        document.createElement("div");
+
+    column.className =
+        "birthday-column";
+
+
+    values.forEach(function(value) {
+
+        const item =
+            document.createElement("div");
+
+        item.className =
+            "birthday-item";
+
+        item.textContent = value;
+
+        item.dataset.value = value;
+
+        column.appendChild(item);
+
+    });
+
+
+    requestAnimationFrame(function() {
+
+        const items =
+            column.querySelectorAll(".birthday-item");
+
+
+        items.forEach(function(item) {
+
+            if (
+                String(item.dataset.value) ===
+                String(selectedValue)
+            ) {
+
+                item.classList.add("is-selected");
+
+                item.scrollIntoView({
+                    block: "center",
+                    behavior: "instant"
+                });
+
+            }
+
+        });
+
+    });
+
+
+    column.onscroll = function() {
+        updateBirthdaySelected(column);
+    };
+
+
+    return column;
+}
+
+function updateBirthdayDayColumn() {
+
+    const columns =
+        birthdayWheelColumns
+            .querySelectorAll(".birthday-column");
+
+    // 年・月・日の3列がまだなければ何もしない
+    if (columns.length < 3) {
+        return;
+    }
+
+    const yearColumn = columns[0];
+    const monthColumn = columns[1];
+    const dayColumn = columns[2];
+
+updateBirthdaySelected(yearColumn);
+updateBirthdaySelected(monthColumn);
+
+    const selectedYear =
+        yearColumn.querySelector(".is-selected");
+
+    const selectedMonth =
+        monthColumn.querySelector(".is-selected");
+
+    const selectedDay =
+        dayColumn.querySelector(".is-selected");
+
+
+    if (!selectedYear || !selectedMonth) {
+        return;
+    }
+
+
+    const year =
+        Number(selectedYear.dataset.value);
+
+    const month =
+        Number(selectedMonth.dataset.value);
+
+    const oldDay =
+        selectedDay
+            ? Number(selectedDay.dataset.value)
+            : 1;
+
+
+    // この年月が何日まであるか
+    const maxDays =
+        getDaysInMonth(year, month);
+
+
+    // 31日 → 2月なら28/29日に丸める
+    const newDay =
+        Math.min(oldDay, maxDays);
+
+
+    const days = [];
+
+    for (let day = 1; day <= maxDays; day++) {
+
+        days.push(
+            String(day).padStart(2, "0")
+        );
+
+    }
+
+
+    // 新しい「日」列を作る
+    const newDayColumn =
+        createBirthdayColumn(
+            days,
+            String(newDay).padStart(2, "0")
+        );
+
+
+    // 古い日列と交換
+    dayColumn.replaceWith(newDayColumn);
+}
+
+function updateBirthdaySelected(column) {
+
+    const rect =
+        column.getBoundingClientRect();
+
+    const center =
+        rect.top + rect.height / 2;
+
+
+    const items =
+        column.querySelectorAll(".birthday-item");
+
+
+    let closestItem = null;
+    let closestDistance = Infinity;
+
+
+    items.forEach(function(item) {
+
+        const itemRect =
+            item.getBoundingClientRect();
+
+        const itemCenter =
+            itemRect.top + itemRect.height / 2;
+
+        const distance =
+            Math.abs(itemCenter - center);
+
+
+        if (distance < closestDistance) {
+
+            closestDistance = distance;
+            closestItem = item;
+
+        }
+
+    });
+
+
+    items.forEach(function(item) {
+        item.classList.remove("is-selected");
+    });
+
+
+    if (closestItem) {
+        closestItem.classList.add("is-selected");
+    }
+}
+
+userBirthdayButton.addEventListener("click", function() {
+
+    birthdayWheelColumns.innerHTML = "";
+
+
+    const parts =
+        userProfile.birthday.split("/");
+
+    const currentYear =
+        Number(parts[0]);
+
+    const currentMonth =
+        Number(parts[1]);
+
+    const currentDay =
+        Number(parts[2]);
+
+
+    const years = [];
+
+    for (let year = 1920; year <= 2030; year++) {
+        years.push(year);
+    }
+
+
+    const months = [];
+
+    for (let month = 1; month <= 12; month++) {
+
+        months.push(
+            String(month).padStart(2, "0")
+        );
+
+    }
+
+
+    const maxDays =
+        getDaysInMonth(
+            currentYear,
+            currentMonth
+        );
+
+
+    const days = [];
+
+    for (let day = 1; day <= maxDays; day++) {
+
+        days.push(
+            String(day).padStart(2, "0")
+        );
+
+    }
+
+
+    const yearColumn =
+        createBirthdayColumn(
+            years,
+            currentYear
+        );
+
+    const monthColumn =
+        createBirthdayColumn(
+            months,
+            String(currentMonth).padStart(2, "0")
+        );
+
+    const dayColumn =
+        createBirthdayColumn(
+            days,
+            String(currentDay).padStart(2, "0")
+        );
+
+        let birthdayUpdateTimer = null;
+
+
+// 年を動かしたとき
+yearColumn.addEventListener("scroll", function() {
+
+    clearTimeout(birthdayUpdateTimer);
+
+    birthdayUpdateTimer = setTimeout(function() {
+
+        // スクロールが落ち着いてから選択位置を確定
+        updateBirthdaySelected(yearColumn);
+
+        // その確定値で日数を更新
+        updateBirthdayDayColumn();
+
+    }, 300);
+
+});
+
+
+// 月を動かしたとき
+monthColumn.addEventListener("scroll", function() {
+
+    clearTimeout(birthdayUpdateTimer);
+
+    birthdayUpdateTimer = setTimeout(function() {
+
+        // スクロールが落ち着いてから選択位置を確定
+        updateBirthdaySelected(monthColumn);
+
+        // その確定値で日数を更新
+        updateBirthdayDayColumn();
+
+    }, 300);
+
+});
+
+
+    birthdayWheelColumns.appendChild(yearColumn);
+
+    addBirthdaySeparator();
+
+    birthdayWheelColumns.appendChild(monthColumn);
+
+    addBirthdaySeparator();
+
+    birthdayWheelColumns.appendChild(dayColumn);
+
+
+    birthdayWheelModal.classList.remove("hidden");
+
+});
+
+function addBirthdaySeparator() {
+
+    const separator =
+        document.createElement("div");
+
+    separator.className =
+        "birthday-separator";
+
+    separator.textContent = "/";
+
+    birthdayWheelColumns.appendChild(separator);
+
+}
+
+birthdayWheelOverlay.addEventListener("click", function() {
+
+    const columns =
+        birthdayWheelColumns
+            .querySelectorAll(".birthday-column");
+
+
+    const values = [];
+
+
+    columns.forEach(function(column) {
+
+        const selected =
+            column.querySelector(".is-selected");
+
+        if (selected) {
+            values.push(selected.dataset.value);
+        }
+
+    });
+
+
+    if (values.length === 3) {
+
+        userProfile.birthday =
+            `${values[0]}/${values[1]}/${values[2]}`;
+
+        userBirthdayButton.textContent =
+            `${values[0]} / ${values[1]} / ${values[2]}`;
+
+        saveUserProfile();
+
+    }
+
+
+    birthdayWheelModal.classList.add("hidden");
+
+});
+
+//PLACE OF BIRTH文字化け
+const ddPlaceOfBirth =
+    document.getElementById("dd-place-of-birth");
+
+
+const mojibakeChars = [
+    "繧","縺","螟","譁","蜿","陦","髫","逕","鬥","莨","隕","蛯",
+    "隧","※","?","�","▒","▓","/","\\","%"
+];
+
+
+function createMojibake(length) {
+
+    let text = "";
+
+    for (let i = 0; i < length; i++) {
+
+        const randomIndex =
+            Math.floor(
+                Math.random() * mojibakeChars.length
+            );
+
+        text +=
+            mojibakeChars[randomIndex];
+
+    }
+
+    return text;
+}
+
+function updateBirthMojibake() {
+
+    if (!ddPlaceOfBirth) {
+        return;
+    }
+
+    const length =
+        9 + Math.floor(Math.random() * 8);
+
+    ddPlaceOfBirth.textContent =
+        createMojibake(length);
+}
+
+setInterval(function() {
+
+    updateBirthMojibake();
+
+}, 100);
+
+// ================================
+// プロフィール ランダムグリッチ
+// ================================
+
+const profileGlitchTargets =
+    document.querySelectorAll(
+        "#profile-screen .glitch-target"
+    );
+
+
+function triggerRandomProfileGlitch() {
+
+    // プロフィール画面が閉じているなら何もしない
+    if (profileScreen.classList.contains("hidden")) {
+        return;
+    }
+
+
+    if (profileGlitchTargets.length === 0) {
+        return;
+    }
+
+
+    // ランダムに1個選ぶ
+    const randomIndex =
+        Math.floor(
+            Math.random() *
+            profileGlitchTargets.length
+        );
+
+    const target =
+        profileGlitchTargets[randomIndex];
+
+        const randomY =
+    20 + Math.random() * 60;
+
+target.style.setProperty(
+    "--glitch-y",
+    randomY + "%"
+);
+
+
+    // グリッチ発生
+    target.classList.add("line-glitch");
+
+
+    // アニメ終了後に戻す
+    setTimeout(function() {
+
+        target.classList.remove("line-glitch");
+
+    }, 200);
+}
+
+function scheduleNextProfileGlitch() {
+
+    // 1〜4秒のランダム
+    const delay =
+        150 +
+        Math.random() * 300;
+
+
+    setTimeout(function() {
+
+        triggerRandomProfileGlitch();
+
+        scheduleNextProfileGlitch();
+
+    }, delay);
+}
+
+
+scheduleNextProfileGlitch();
+
+const ddJitterElements =
+    document.querySelectorAll(".dd-jitter");
+
+ddJitterElements.forEach(function(element) {
+
+    // 2〜5秒のランダム周期
+    const duration =
+        2 + Math.random() * 3;
+
+    // 開始位置もバラす
+    const delay =
+        Math.random() * -5;
+
+    element.style.animationDuration =
+        duration + "s";
+
+    element.style.animationDelay =
+        delay + "s";
 
 });

@@ -113,6 +113,213 @@
     </div>
     </div>
 
+    <!--プロフィール画面-->
+<div id="profile-screen" class="profile-screen hidden">
+    <div class="profile-scanline"></div>
+    <div class="profile-noise"></div>
+
+    <button id="profile-back" class="profile-back" type="button">
+        ←戻る
+    </button>
+
+
+    <section class="user-profile-section">
+
+        <h1 class="profile-heading">
+            #USER PROFILE
+        </h1>
+
+
+        <div class="user-profile-layout">
+
+            <div class="user-profile-info">
+
+                <div class="profile-row">
+    <span class="profile-label">NAME:</span>
+
+    <input
+        id="user-name"
+        class="profile-input"
+        type="text"
+        maxlength="20"
+        autocomplete="off"
+        placeholder="入力してください"
+    >
+</div>
+
+                <div class="profile-row">
+    <span class="profile-label glitch-target">STATUS:</span>
+
+    <button
+        id="user-status"
+        class="profile-select"
+        type="button"
+    >
+        学生
+    </button>
+</div>
+
+                <div class="profile-row">
+    <span class="profile-label glitch-target">YOUR GOAL:</span>
+
+    <input
+        id="user-goal"
+        class="profile-input"
+        type="text"
+        maxlength="60"
+        autocomplete="off"
+        placeholder="入力してください"
+    >
+</div>
+
+                <div class="profile-row">
+    <span class="profile-label glitch-target">BIRTHDAY:</span>
+
+    <button
+        id="user-birthday"
+        class="profile-select"
+        type="button"
+    >
+        2001 / 02 / 16
+    </button>
+</div>
+
+            </div>
+
+
+            <!-- 後でCG画像を入れる場所 -->
+            <div class="profile-computer">
+
+                <div class="profile-computer-placeholder">
+                    CG
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="dd-profile-section">
+
+        <h2 class="profile-heading">
+            #ABOUT D.D
+        </h2>
+
+        <div class="dd-profile-text">
+
+            <p>
+                <strong class="dd-label glitch-target">NAME:</strong>
+                <span>D.D (Dexter Dot)</span>
+            </p>
+
+            <p>
+                <strong class="dd-label">AGE:</strong>
+                <span class="glitch-target dd-jitter">unknown</span>
+            </p>
+
+            <p>
+                <strong class="dd-label">SEX:</strong>
+                <span class="glitch-target">unknown</span>
+            </p>
+
+            <p>
+                <strong class="dd-label glitch-target">BLOOD TYPE:</strong>
+                <span class="glitch-target dd-jitter">Not applicable</span>
+            </p>
+
+            <p>
+                <strong class="dd-label glitch-target">LANGUAGE:</strong>
+                <span class="glitch-target">Japanese / English / Other</span>
+            </p>
+
+            <p>
+                <strong class="dd-label">OCCUPATION:</strong>
+                <span>Researcher</span>
+            </p>
+
+            <p>
+                <strong class="dd-label glitch-target">PLACE OF BIRTH:</strong>
+                <span id="dd-place-of-birth">
+                    謗?螟悶喧縺励※縺?
+                </span>
+            </p>
+
+            <p>
+                <strong class="dd-label glitch-target">ADDRESS:</strong>
+                <span class="glitch-target dd-jitter">Somewhere in this earth</span>
+            </p>
+
+            <p>
+                <strong class="dd-label">LIKE:</strong>
+                <span class="glitch-target">プリン、観察、深夜</span>
+            </p>
+
+            <p>
+                <strong class="dd-label glitch-target dd-jitter">DISLIKE:</strong>
+                <span>退屈、根拠のない断定、辛いもの</span>
+            </p>
+
+            <p>
+                <strong class="dd-label glitch-target">HOBBY:</strong>
+                <span>チェス、園芸</span>
+            </p>
+
+            <p class="dd-long-description">
+                <strong class="dd-label">WHO?:</strong>
+                <span class="glitch-target">
+                    あなたの集中時間を管理・サポートするコンシェルジュであり、
+                    人類のQOL向上追求に勤しむ研究者。
+                    あなたに興味があるようです。
+                </span>
+            </p>
+
+        </div>
+
+    </section>
+
+</div>
+
+<!-- STATUSホイール -->
+<div id="status-wheel-modal" class="profile-wheel-modal hidden">
+
+    <div class="profile-wheel-overlay"></div>
+
+    <div class="profile-wheel-panel">
+
+        <div id="status-wheel" class="profile-wheel">
+            <div class="profile-wheel-item">学生</div>
+            <div class="profile-wheel-item">社会人</div>
+            <div class="profile-wheel-item">自営業</div>
+            <div class="profile-wheel-item">フリーランス</div>
+            <div class="profile-wheel-item">求職中</div>
+            <div class="profile-wheel-item">その他</div>
+        </div>
+
+        <div class="profile-wheel-band"></div>
+
+    </div>
+
+</div>
+
+<!-- BIRTHDAYホイール -->
+<div id="birthday-wheel-modal" class="profile-wheel-modal hidden">
+
+    <div class="profile-wheel-overlay"></div>
+
+    <div class="profile-wheel-panel birthday-wheel-panel">
+
+        <div
+            id="birthday-wheel-columns"
+            class="birthday-wheel-columns"
+        ></div>
+
+        <div class="profile-wheel-band"></div>
+
+    </div>
+
+</div>
 
 <!--タイマー画面-->
     <div id="timer-screen" class="hidden">
@@ -203,7 +410,7 @@
         </div>
 
         <div class="finish-message">
-            ⚠️終了しますか？
+            終了しますか？
         </div>
 
         <div class="finish-actions">
@@ -338,7 +545,7 @@
         </div>
 
         <div class="finish-message">
-            ⚠️削除しますか？
+            削除しますか？
         </div>
 
         <div class="finish-actions">

@@ -1077,8 +1077,8 @@ body.timer-mode .dialog {
     position: relative;
     z-index: 1;
 
-    width: min(330px, 82vw);
-    min-height: 220px;
+    width: min(300px, 82vw);
+    min-height: 200px;
 
     padding: 20px;
 
@@ -1159,8 +1159,8 @@ body.timer-mode .dialog {
 
 
 .finish-choice {
-    width: 120px;
-    height: 52px;
+    width: 100px;
+    height: 45px;
 
     font-family: inherit;
     font-size: 20px;
@@ -1306,7 +1306,7 @@ body.timer-mode .dialog {
     font-family: inherit;
     font-size: 20px;
 
-    color: #888;
+    color: #e0e0e0;
 
     padding: 8px 13px;
 
@@ -1327,13 +1327,13 @@ body.timer-mode .dialog {
 .record-item {
     display: grid;
 
-    grid-template-columns: 105px 1fr 120px;
+    grid-template-columns: 90px 1fr 120px;
 
     align-items: center;
 
-    min-height: 125px;
+    min-height: 100px;
 
-    margin-bottom: 22px;
+    margin-bottom: 12px;
 }
 
 
@@ -1343,14 +1343,14 @@ body.timer-mode .dialog {
 
     font-size: 25px;
 
-    margin-bottom: 7px;
+    margin-bottom: -20px;
 }
 
 
 /*後でCGを置く*/
 .record-thumb {
-    width: 62px;
-    height: 62px;
+    width: 30px;
+    height: 30px;
 
     margin-left: 12px;
 
@@ -1567,7 +1567,7 @@ body.timer-mode .dialog {
 .genre-wheel-panel {
     position: relative;
 
-    width: min(400px, 100%);
+    width: min(300px, 100%);
     height: 200px;
 
     background: #f5f5f5;
@@ -1688,7 +1688,7 @@ body.timer-mode .dialog {
 .datetime-wheel-panel {
     position: relative;
 
-    width: min(400px, 100%);
+    width: min(300px, 100%);
     height: 200px;
 
     background: #f5f5f5;
@@ -2148,7 +2148,625 @@ body.timer-mode .dialog {
     transform: translate(3px, 3px);
 }
 
+/* ================================
+   プロフィール画面
+================================ */
 
+.profile-screen {
+    position: fixed;
+    inset: 0;
+
+    z-index: 6000;
+
+    width: 100%;
+    height: 100dvh;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    box-sizing: border-box;
+
+    background: #0004ff;
+    color: #e0e0e0;
+
+    padding: 34px 42px 80px;
+}
+
+
+/*プロフィール戻る*/
+.profile-back {
+    padding: 8px 14px;
+    font-family: inherit;
+    font-size: 18px;
+    margin-bottom: 45px;
+    
+}
+
+.profile-back:active {
+    transform: translate(3px, 3px);
+    box-shadow:
+        inset 2px 2px 0 #777,
+        inset -2px -2px 0 #e0e0e0;
+}
+
+/*USER PROFILE/ABOUT D.D*/
+.profile-heading {
+    margin: 0 0 15px;
+
+    font-size: clamp(38px, 6vw, 68px);
+    font-weight: bolder;
+}
+
+
+/* 上半分 */
+.user-profile-section {
+    max-width: 1000px;
+    margin: 0 auto 90px;
+}
+
+
+.user-profile-layout {
+    position: relative;
+    display: block;
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(220px, 380px);
+
+    column-gap: 60px;
+
+    align-items: start;
+}
+
+.user-profile-info {
+    display: flex;
+    flex-direction: column;
+
+    gap: 25px;
+
+    margin: 0;
+    padding: 0;
+
+    align-self: start;
+    padding-right: 100px;
+}
+
+.user-profile-section {
+    max-width: 1000px;
+    margin: 0 auto 90px;
+}
+
+.user-profile-layout,
+.user-profile-info,
+.profile-row {
+    min-height: 0;
+}
+
+
+.profile-row {
+    display: grid;
+
+    grid-template-columns:
+        max-content
+        minmax(0, 1fr);
+
+    gap: 28px;
+
+    align-items: baseline;
+
+    font-size: clamp(22px, 3.5vw, 36px);
+}
+
+
+.profile-label {
+    white-space: nowrap;
+    font-weight: bolder;
+}
+
+
+.profile-value {
+    min-height: 1em;
+}
+
+
+/* CG仮置き */
+.profile-computer {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 320px;
+}
+
+
+.profile-computer-placeholder {
+    width: min(320px, 100%);
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid rgba(255,255,255,0.5);
+
+    color: rgba(255,255,255,0.5);
+}
+
+
+/* D.D */
+.dd-profile-section {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.dd-label{
+    font-weight: bolder;
+}
+
+.dd-profile-text {
+    font-size: clamp(22px, 3.5vw, 36px);
+    line-height: 1.7;
+}
+
+
+.dd-profile-text p {
+    margin: 0 0 14px;
+}
+
+
+.dd-profile-text span {
+    margin-left: 14px;
+}
+
+
+.dd-long-description {
+    max-width: 900px;
+}
+
+/*入力欄っぽさを消す*/
+.profile-input,
+.profile-select {
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+    color: white;
+
+    font-family: inherit;
+    font-size: inherit;
+
+    text-align: left;
+}
+
+.profile-input {
+    caret-color: white;
+}
+
+.profile-input::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.profile-select {
+    cursor: pointer;
+}
+
+/*プロフィールホイール*/
+.profile-wheel-modal {
+    position: fixed;
+    inset: 0;
+
+    z-index: 10000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.20);
+}
+
+.profile-wheel-panel {
+    position: relative;
+
+    width: min(400px, 90vw);
+    height: 210px;
+
+    background: #f5f5f5;
+    color: black;
+
+    overflow: hidden;
+
+    border: 1px solid #555;
+}
+
+.profile-wheel {
+    height: 100%;
+
+    overflow-y: auto;
+
+    scroll-snap-type: y mandatory;
+
+    padding-top: 70px;
+    padding-bottom: 70px;
+
+    box-sizing: border-box;
+
+    scrollbar-width: none;
+}
+
+.profile-wheel::-webkit-scrollbar {
+    display: none;
+}
+
+.profile-wheel-item {
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    scroll-snap-align: center;
+
+    font-size: 30px;
+
+    color: #b8b8b8;
+
+    position: relative;
+    z-index: 2;
+}
+
+.profile-wheel-item.is-selected {
+    color: #111;
+}
+
+.profile-wheel-band {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    top: 50%;
+
+    height: 70px;
+
+    transform: translateY(-50%);
+
+    background: rgba(180, 180, 180, 0.28);
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+/*バースデーホイール3列*/
+.birthday-wheel-columns {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    z-index: 2;
+}
+
+.birthday-column {
+    width: 90px;
+    height: 100%;
+
+    overflow-y: auto;
+
+    scroll-snap-type: y mandatory;
+
+    padding-top: 70px;
+    padding-bottom: 70px;
+
+    box-sizing: border-box;
+
+    scrollbar-width: none;
+}
+
+.birthday-column::-webkit-scrollbar {
+    display: none;
+}
+
+.birthday-item {
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    scroll-snap-align: center;
+
+    font-size: 27px;
+
+    color: #b8b8b8;
+}
+
+.birthday-item.is-selected {
+    color: #111;
+}
+
+.birthday-separator {
+    font-size: 28px;
+
+    color: #111;
+
+    position: relative;
+    z-index: 3;
+}
+
+.profile-wheel-overlay {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+}
+
+.profile-wheel-panel {
+    position: relative;
+    z-index: 2;
+
+    width: min(400px, 90vw);
+    height: 210px;
+
+    background: #f5f5f5;
+    color: black;
+
+    overflow: hidden;
+
+    border: 1px solid #555;
+}
+
+/*入力してください*/
+.profile-input::placeholder {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.profile-select.is-placeholder {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+/*プロフィール画面スキャンライン*/
+.profile-scanline {
+    position: fixed;
+
+    left: 0;
+    top: -10%;
+
+    width: 100%;
+    height: 55px;
+
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(255, 255, 255, 0.04),
+        rgba(255, 255, 255, 0.18),
+        rgba(255, 255, 255, 0.04),
+        transparent
+    );
+
+    pointer-events: none;
+
+    z-index: 999;
+
+    animation:
+        profile-scan 5.5s linear infinite;
+}
+
+@keyframes profile-scan {
+
+    from {
+        transform: translateY(-80px);
+    }
+
+    to {
+        transform: translateY(115vh);
+    }
+}
+
+
+.dd-jitter {
+    display: inline-block;
+
+    animation-name: birth-jitter;
+    animation-timing-function: steps(1);
+    animation-iteration-count: infinite;
+}
+
+
+#dd-place-of-birth {
+    display: inline-block;
+    position: relative;
+
+    animation:
+        birth-jitter 1.5s steps(1) infinite;
+}
+
+@keyframes birth-jitter {
+
+    0%,
+    72%,
+    100% {
+        transform: translateX(0);
+    }
+
+    74% {
+        transform: translateX(-10px);
+        text-shadow:
+        2px 0 rgba(255, 60, 180, 0.8),
+        -2px 0 rgba(80, 220, 255, 0.8);
+    }
+
+    76% {
+        transform: translateX(2px);
+    }
+
+    78% {
+        transform: translateX(-1px);
+    }
+
+    80% {
+        transform: translateX(10px);
+        text-shadow:
+        -2px 0 rgba(255, 60, 180, 0.8),
+        2px 0 rgba(80, 220, 255, 0.8);
+    }
+
+    82% {
+        transform: translateX(0);
+    }
+}
+
+/*ランダムグリッチ線*/
+.glitch-target {
+    position: relative;
+}
+
+.glitch-target::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: var(--glitch-y, 50%);
+
+    width: 0;
+    height: 2px;
+
+    background: white;
+
+    pointer-events: none;
+    z-index: 5;
+}
+
+.glitch-target.line-glitch::after {
+    animation: line-glitch 0.25s steps(2) forwards;
+}
+
+@keyframes line-glitch {
+
+    0% {
+        width: 0;
+        left: 10%;
+        opacity: 0;
+    }
+
+    20% {
+        width: 35%;
+        left: 5%;
+        opacity: 1;
+    }
+
+    50% {
+        width: 75%;
+        left: 20%;
+        opacity: 1;
+    }
+
+    80% {
+        width: 25%;
+        left: 65%;
+        opacity: 1;
+    }
+
+    100% {
+        width: 0;
+        left: 90%;
+        opacity: 0;
+    }
+}
+
+/*画面ノイズ*/
+.profile-noise {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.6;
+
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.45'/%3E%3C/svg%3E");
+
+    background-size: 500px 500px;
+    mix-blend-mode: screen;
+    animation: profile-static-noise 0.18s steps(1) infinite;
+}
+
+@keyframes profile-static-noise {
+
+    0% {
+        background-position: 0 0;
+    }
+
+    20% {
+        background-position: 340px 15px;
+    }
+
+    40% {
+        background-position: -23px 41px;
+    }
+
+    60% {
+        background-position: 19px -31px;
+    }
+
+    80% {
+        background-position: -44px 17px;
+    }
+
+    100% {
+        background-position: 8px 29px;
+    }
+}
+
+
+
+/* スマホ */
+@media (max-width: 700px) {
+
+    .profile-screen {
+        padding:
+            24px
+            20px
+            70px;
+    }
+
+
+    .user-profile-layout {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+
+    .profile-computer {
+        order: -1;
+    }
+
+
+    .profile-computer-placeholder {
+        width: 180px;
+
+        margin-left: auto;
+    }
+
+
+    .profile-row {
+        gap: 18px;
+    }
+
+}
 
 /*スマホ用*/
 @media (max-width: 500px) {

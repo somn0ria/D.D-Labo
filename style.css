@@ -2932,6 +2932,89 @@ body.timer-mode .dialog {
         font-family: "DotGothic16", sans-serif;
 }
 
+body.timer-mode #dialog {
+    box-sizing: border-box;
+
+    left: 50%;
+    right: auto;
+    top:400px; /*タイマーセリフ位置*/
+
+    transform: translateX(-50%);
+}
+
+#running-screen {
+    position: fixed !important;
+
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+
+    width: 100vw !important;
+    height: 100dvh !important;
+
+    margin: 0 !important;
+
+    transform: none !important;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    overflow: visible;
+
+    box-sizing: border-box;
+
+    z-index: 50;
+}
+
+#running-screen.hidden {
+    display: none !important;
+}
+
+#running-end-time,
+#countdown,
+#timer-finish {
+    position: static !important;
+
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+
+    transform: none !important;
+}
+
+/* 終了予定時刻 */
+#running-end-time {
+    position: static;
+
+    margin: 0 0 10px;
+
+    transform: none;
+}
+
+
+/* カウント数字 */
+#countdown {
+    position: static;
+
+    margin: 0 0 30px;
+
+    transform: none;
+}
+
+
+/* FINISH */
+#timer-finish {
+    position: static;
+
+    margin: 0;
+
+    transform: none;
+}
+
 /*記録画面*/
 /*ALL～TASK*/
 .record-tabs button,
@@ -2992,88 +3075,6 @@ body.timer-mode .dialog {
     -webkit-text-fill-color: #fff;
 }
 
-
-/*タイマー設定画面*/
-.timer-screen {
-    width: 100%;
-    min-height: 100vh;
-
-    box-sizing: border-box;
-    overflow-x: hidden;
-}
-
-/*
-セリフ枠を画面下部に固定。
-PC側のleft/top等に引きずられないようリセット。
-*/
-.timer-screen .dialog {
-    position: fixed;
-
-    left: 50%;
-    right: auto;
-    top: auto;
-    bottom: 18px;
-
-    width: calc(100% - 32px);
-    max-width: 500px;
-
-    margin: 0;
-
-    transform: translateX(-50%);
-
-    box-sizing: border-box;
-    z-index: 100;
-}
-
-
-/*カウント中*/
-.count-screen,
-.timer-count-screen {
-    width: 100%;
-    min-height: 100vh;
-
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
-/*数字などを画面外に飛ばさない*/
-.count-screen .timer-count,
-.timer-count-screen .timer-count {
-    position: relative;
-
-    left: auto;
-    right: auto;
-    top: auto;
-
-    margin-left: auto;
-    margin-right: auto;
-
-    transform: none;
-}
-
-/*FINISH*/
-.count-screen .finish-button,
-.timer-count-screen .finish-button {
-    position: relative;
-
-    left: auto;
-    right: auto;
-    bottom: auto;
-
-    margin:
-        30px
-        auto
-        0;
-
-    transform: none;
-}
-
-
-/*スマホでも押し込み*/
-button:active {
-    transform: translate(3px, 3px);
-}
-
 /*
 transformで位置決めしているボタンには
 translateを上書きすると壊れるので個別処理
@@ -3089,4 +3090,42 @@ translateを上書きすると壊れるので個別処理
     box-shadow:
         inset 2px 2px 0 #777,
         inset -2px -2px 0 #fff;
-}}
+}
+
+/*iOS青文字*/
+/* ホーム */
+.menu button,
+.next-button,
+
+/* タイマー */
+#timer-start,
+#timer-finish,
+#timer-back,
+
+/* 記録 */
+.record-field,
+.record-editor-actions button,
+.record-search-actions button,
+.record-action-modal button,
+.record-delete-modal button,
+.finish-actions button,
+#record-add,
+#record-search,
+#record-back,
+
+/* プロフィール戻る */
+#profile-back {
+    color: #111;
+    -webkit-text-fill-color: #111;
+}
+
+/*タイマー時は親による切り抜きを解除*/
+body.timer-mode .container {
+    overflow: visible;
+}
+
+#timer-screen {
+    overflow: visible;
+}
+
+}

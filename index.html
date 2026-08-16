@@ -125,7 +125,7 @@
 
     <section class="user-profile-section">
 
-        <h1 class="profile-heading">
+        <h1 class="profile-heading profile-decode decode-title">
             #USER PROFILE
         </h1>
 
@@ -135,7 +135,7 @@
             <div class="user-profile-info">
 
                 <div class="profile-row">
-    <span class="profile-label">NAME:</span>
+    <span class="profile-label profile-decode">NAME:</span>
 
     <input
         id="user-name"
@@ -148,7 +148,7 @@
 </div>
 
                 <div class="profile-row">
-    <span class="profile-label glitch-target">STATUS:</span>
+    <span class="profile-label glitch-target profile-decode">STATUS:</span>
 
     <button
         id="user-status"
@@ -160,7 +160,7 @@
 </div>
 
                 <div class="profile-row">
-    <span class="profile-label glitch-target">YOUR GOAL:</span>
+    <span class="profile-label glitch-target profile-decode">YOUR GOAL:</span>
 
     <input
         id="user-goal"
@@ -173,7 +173,7 @@
 </div>
 
                 <div class="profile-row">
-    <span class="profile-label glitch-target">BIRTHDAY:</span>
+    <span class="profile-label glitch-target profile-decode">BIRTHDAY:</span>
 
     <button
         id="user-birthday"
@@ -203,72 +203,72 @@
 
     <section class="dd-profile-section">
 
-        <h2 class="profile-heading">
+        <h2 class="profile-heading profile-decode decode-title">
             #ABOUT D.D
         </h2>
 
         <div class="dd-profile-text">
 
             <p>
-                <strong class="dd-label glitch-target">NAME:</strong>
-                <span>D.D (Dexter Dot)</span>
+                <strong class="dd-label glitch-target profile-decode">NAME:</strong>
+                <span class="profile-decode">D.D (Dexter Dot)</span>
             </p>
 
             <p>
-                <strong class="dd-label">AGE:</strong>
-                <span class="glitch-target dd-jitter">unknown</span>
+                <strong class="dd-label profile-decode">AGE:</strong>
+                <span class="glitch-target dd-jitter profile-decode">unknown</span>
             </p>
 
             <p>
-                <strong class="dd-label">SEX:</strong>
-                <span class="glitch-target">unknown</span>
+                <strong class="dd-label profile-decode">SEX:</strong>
+                <span class="glitch-target profile-decode">unknown</span>
             </p>
 
             <p>
-                <strong class="dd-label glitch-target">BLOOD TYPE:</strong>
-                <span class="glitch-target dd-jitter">Not applicable</span>
+                <strong class="dd-label glitch-target profile-decode">BLOOD TYPE:</strong>
+                <span class="glitch-target dd-jitter profile-decode">Not applicable</span>
             </p>
 
             <p>
-                <strong class="dd-label glitch-target">LANGUAGE:</strong>
-                <span class="glitch-target">Japanese / English / Other</span>
+                <strong class="dd-label glitch-target profile-decode">LANGUAGE:</strong>
+                <span class="glitch-target profile-decode">Japanese / English / Other</span>
             </p>
 
             <p>
-                <strong class="dd-label">OCCUPATION:</strong>
-                <span>Researcher</span>
+                <strong class="dd-label profile-decode">OCCUPATION:</strong>
+                <span class="profile-decode">Researcher</span>
             </p>
 
             <p>
-                <strong class="dd-label glitch-target">PLACE OF BIRTH:</strong>
+                <strong class="dd-label glitch-target profile-decode">PLACE OF BIRTH:</strong>
                 <span id="dd-place-of-birth">
                     謗?螟悶喧縺励※縺?
                 </span>
             </p>
 
             <p>
-                <strong class="dd-label glitch-target">ADDRESS:</strong>
-                <span class="glitch-target dd-jitter">Somewhere in this earth</span>
+                <strong class="dd-label glitch-target profile-decode">ADDRESS:</strong>
+                <span class="glitch-target dd-jitter profile-decode">Somewhere in this earth</span>
             </p>
 
             <p>
-                <strong class="dd-label">LIKE:</strong>
-                <span class="glitch-target">プリン、観察、深夜</span>
+                <strong class="dd-label profile-decode">LIKE:</strong>
+                <span class="glitch-target profile-decode">プリン、観察、深夜</span>
             </p>
 
             <p>
-                <strong class="dd-label glitch-target dd-jitter">DISLIKE:</strong>
-                <span>退屈、根拠のない断定、辛いもの</span>
+                <strong class="dd-label glitch-target dd-jitter profile-decode">DISLIKE:</strong>
+                <span class="profile-decode">退屈、根拠のない断定、辛いもの</span>
             </p>
 
             <p>
-                <strong class="dd-label glitch-target">HOBBY:</strong>
-                <span>チェス、園芸</span>
+                <strong class="dd-label glitch-target profile-decode">HOBBY:</strong>
+                <span class="profile-decode">チェス、園芸</span>
             </p>
 
             <p class="dd-long-description">
-                <strong class="dd-label">WHO?:</strong>
-                <span class="glitch-target">
+                <strong class="dd-label profile-decode">WHO?:</strong>
+                <span class="glitch-target profile-decode">
                     あなたの集中時間を管理・サポートするコンシェルジュであり、
                     人類のQOL向上追求に勤しむ研究者。
                     あなたに興味があるようです。
@@ -330,6 +330,7 @@
 
 
         <div class="timer-setting">
+            <div class="timer-setting-content">
 
             <div class="timer-title">
                 集中時間を設定
@@ -369,7 +370,8 @@
 
         <span class="timer-unit">まで</span>
     </div>
-</div>
+ </div>
+            </div>
 
             <button id="timer-start" class="timer-start">
                 START

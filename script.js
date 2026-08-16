@@ -747,8 +747,29 @@ function finishTimerTyping() {
 
 //ホーム→プロフィール
 profileButton.addEventListener("click", function() {
+
     homeScreen.classList.add("hidden");
+
     profileScreen.classList.remove("hidden");
+
+    // まず現在のプロフィール内容を表示
+    renderUserProfile();
+
+    // 普通のテキストを復号
+    playProfileDecodeAnimation();
+
+    // STATUSの「選択」または入力済みステータスも復号
+    decodeProfileElement(
+        userStatusButton,
+        250
+    );
+
+    // BIRTHDAYの「選択」または入力済み誕生日も復号
+    decodeProfileElement(
+        userBirthdayButton,
+        350
+    );
+
 });
 
 //プロフィール→ホーム
@@ -3126,10 +3147,7 @@ setInterval(function() {
 
 }, 100);
 
-// ================================
-// プロフィール ランダムグリッチ
-// ================================
-
+//ランダムグリッチ
 const profileGlitchTargets =
     document.querySelectorAll(
         "#profile-screen .glitch-target"
@@ -3138,7 +3156,7 @@ const profileGlitchTargets =
 
 function triggerRandomProfileGlitch() {
 
-    // プロフィール画面が閉じているなら何もしない
+    //プロフィール画面が閉じているなら何もしない
     if (profileScreen.classList.contains("hidden")) {
         return;
     }
@@ -3149,7 +3167,7 @@ function triggerRandomProfileGlitch() {
     }
 
 
-    // ランダムに1個選ぶ
+    //ランダムに1個選ぶ
     const randomIndex =
         Math.floor(
             Math.random() *
@@ -3168,11 +3186,11 @@ target.style.setProperty(
 );
 
 
-    // グリッチ発生
+    //グリッチ発生
     target.classList.add("line-glitch");
 
 
-    // アニメ終了後に戻す
+    //アニメ終了後に戻す
     setTimeout(function() {
 
         target.classList.remove("line-glitch");
@@ -3182,7 +3200,7 @@ target.style.setProperty(
 
 function scheduleNextProfileGlitch() {
 
-    // 1〜4秒のランダム
+    //1〜4秒のランダム
     const delay =
         150 +
         Math.random() * 300;
@@ -3205,11 +3223,11 @@ const ddJitterElements =
 
 ddJitterElements.forEach(function(element) {
 
-    // 2〜5秒のランダム周期
+    //2〜5秒のランダム周期
     const duration =
         2 + Math.random() * 3;
 
-    // 開始位置もバラす
+    //開始位置もバラす
     const delay =
         Math.random() * -5;
 
@@ -3220,3 +3238,233 @@ ddJitterElements.forEach(function(element) {
         delay + "s";
 
 });
+
+//プロフィール表示時文字復号
+const profileDecodeChars =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" +
+    "#@縺$%&?/<繧>[]▒▓";
+
+
+function createDecodeNoise(length) {
+
+    let result = "";
+
+    for (let i = 0; i < length; i++) {
+
+        const randomIndex =
+            Math.floor(
+                Math.random() *
+                profileDecodeChars.length
+            );
+
+        result +=
+            profileDecodeChars[randomIndex];
+    }
+
+    return result;
+}
+
+function decodeProfileElement(element, delay) {
+
+    const originalText =
+        element.textContent;
+
+    let corruptionRate;
+
+    if (element.classList.contains("decode-title")) {
+        corruptionRate = 0.55;
+    } else {
+        corruptionRate = 0.35;
+    }
+
+
+    setTimeout(function() {
+
+        element.classList.add("is-decoding");
+
+        let step = 0;
+
+        const totalSteps = 9;
+
+
+        const scrambleTimer =
+            setInterval(function() {
+
+                const progress =
+                    step / totalSteps;
+
+                // 徐々に壊れる割合を減らす
+                const currentRate =
+                    corruptionRate * (1 - progress);
+
+
+                let result = "";
+
+
+                for (
+                    let i = 0;
+                    i < originalText.length;
+                    i++
+                ) {
+
+                    const originalChar =
+                        originalText[i];
+
+
+                    // スペースは壊さない
+                    if (originalChar === " ") {
+
+                        result += " ";
+                        continue;
+                    }
+
+
+                    // 一定確率でその文字だけ破損
+                    if (
+                        Math.random() <
+                        currentRate
+                    ) {
+
+                        const randomIndex =
+                            Math.floor(
+                                Math.random() *
+                                profileDecodeChars.length
+                            );
+
+                        result +=
+                            profileDecodeChars[randomIndex];
+
+                    } else {
+
+                        result +=
+                            originalChar;
+
+                    }
+
+                }
+
+
+                element.textContent =
+                    result;
+
+
+                step++;
+
+
+                if (step > totalSteps) {
+
+                    clearInterval(
+                        scrambleTimer
+                    );
+
+                    element.textContent =
+                        originalText;
+
+                    element.classList.remove(
+                        "is-decoding"
+                    );
+
+                }
+
+            }, 70);
+
+    }, delay);
+}
+
+function playProfileDecodeAnimation() {
+
+    const elements =
+        document.querySelectorAll(
+            "#profile-screen .profile-decode"
+        );
+
+    console.log(
+        elements.length,
+        elements
+    );
+
+    elements.forEach(function(element, index) {
+
+        decodeProfileElement(
+            element,
+            index * 10
+        );
+
+        decodePlaceholder(
+    document.getElementById("user-name"),
+    200
+);
+
+decodePlaceholder(
+    document.getElementById("user-goal"),
+    300
+);
+
+    });
+}
+
+function decodePlaceholder(element, delay) {
+
+    const originalText =
+        element.placeholder;
+
+    if (!originalText) return;
+
+
+    setTimeout(function() {
+
+        let step = 0;
+        const totalSteps = 7;
+        const corruptionRate = 0.35;
+
+        const timer = setInterval(function() {
+
+            const progress =
+                step / totalSteps;
+
+            const currentRate =
+                corruptionRate * (1 - progress);
+
+            let result = "";
+
+            for (let i = 0; i < originalText.length; i++) {
+
+                const char = originalText[i];
+
+                if (
+                    char !== " " &&
+                    Math.random() < currentRate
+                ) {
+
+                    const randomIndex =
+                        Math.floor(
+                            Math.random() *
+                            profileDecodeChars.length
+                        );
+
+                    result +=
+                        profileDecodeChars[randomIndex];
+
+                } else {
+
+                    result += char;
+
+                }
+            }
+
+            element.placeholder = result;
+
+            step++;
+
+            if (step > totalSteps) {
+
+                clearInterval(timer);
+
+                element.placeholder =
+                    originalText;
+            }
+
+        }, 65);
+
+    }, delay);
+}

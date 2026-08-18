@@ -62,6 +62,8 @@ button{
     color:#f8f8f8;
     text-shadow:
     0 0 6px rgba(180, 220, 255, 0.65);
+    position:relative;
+    z-index: 10;
 
 }
 
@@ -71,6 +73,8 @@ button{
     color:#f8f8f8;
      text-shadow:
     0 0 6px rgba(180, 220, 255, 0.65);
+    position: relative;
+    z-index: 10;
 
 }
 
@@ -87,7 +91,7 @@ button{
     align-items: center;
     justify-content: center;
 
-    z-index: 5;
+    z-index: 0;
 
      animation: float-character 2.2s ease-in-out infinite;
 }
@@ -618,6 +622,7 @@ button{
     cursor: pointer;
     appearance: none;
     -webkit-appearance: none;
+    z-index: 10;
 }
 
 /*上部リング*/
@@ -799,6 +804,60 @@ button{
     white-space: nowrap;
 }
 
+/*ホームCRTフィルタ本体*/
+.home-crt-filter {
+    position: fixed;
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    pointer-events: none;
+    z-index: 5;
+
+    overflow: hidden;
+
+    /* 別レイヤー化 */
+    isolation: isolate;
+}
+
+/*スキャン線*/
+.home-crt-filter::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -8px;
+
+    width: 100%;
+    height: calc(100% + 16px);
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.06) 0px,
+            rgba(255,255,255,0.06) 1px,
+            rgba(0,0,0,0.11) 2px,
+            rgba(0,0,0,0.15) 4px
+        );
+
+    /*transform専用レイヤー*/
+    will-change: transform;
+
+    animation:
+        crt-lines-flow 0.4s linear infinite;
+}
+
+
+@keyframes crt-lines-flow {
+
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(0, 8px, 0);
+    }
+}
 
 
 /*タイマー画面*/
@@ -2226,6 +2285,7 @@ body.timer-mode .dialog {
 .user-profile-info {
     display: flex;
     flex-direction: column;
+    font-size: clamp(12px, 3.5vw, 20px);
 
     gap: 25px;
 
@@ -2233,7 +2293,6 @@ body.timer-mode .dialog {
     padding: 0;
 
     align-self: start;
-    padding-right: 100px;
 }
 
 .user-profile-section {
@@ -2253,13 +2312,13 @@ body.timer-mode .dialog {
 
     grid-template-columns:
         max-content
-        minmax(0, 1fr);
+        minmax(220px, 1fr);
 
-    gap: 28px;
+    column-gap: 30px;
 
-    align-items: baseline;
+    align-items: center;
 
-    font-size: clamp(12px, 3.5vw, 20px);
+    width: 100%;
 }
 
 
@@ -2273,36 +2332,10 @@ body.timer-mode .dialog {
     min-height: 1em;
 }
 
-
-/*CG仮置き*/
-.profile-computer {
-    position: absolute;
-
-    top: 0;
-    right: 0;
-
-    width: 320px;
-}
-
-
-.profile-computer-placeholder {
-    width: min(320px, 100%);
-    aspect-ratio: 1 / 1;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border: 1px solid rgba(255,255,255,0.5);
-
-    color: rgba(255,255,255,0.5);
-}
-
-
 /*D.D*/
 .dd-profile-section {
     max-width: 1000px;
-    margin: 0 auto;
+    margin: -40px auto 0;
 }
 
 .dd-label{
@@ -2326,14 +2359,24 @@ body.timer-mode .dialog {
 
 
 .dd-long-description {
-    max-width: 900px;
+    display: block;
+}
+
+.dd-long-description .dd-label {
+    display: inline;
+}
+
+.dd-long-description > span {
+    display: inline;
 }
 
 /*入力欄っぽさを消す*/
 .profile-input,
 .profile-select {
+    min-width: 220px;
     width: 100%;
 
+    white-space: nowrap;
     margin: 0;
     padding: 0;
 
@@ -2378,8 +2421,8 @@ body.timer-mode .dialog {
 .profile-wheel-panel {
     position: relative;
 
-    width: min(400px, 90vw);
-    height: 210px;
+    width: min(350px, 90vw);
+    height: 200px;
 
     background: #f5f5f5;
     color: black;
@@ -2387,6 +2430,7 @@ body.timer-mode .dialog {
     overflow: hidden;
 
     border: 1px solid #555;
+    z-index: 2;
 }
 
 .profile-wheel {
@@ -2417,7 +2461,7 @@ body.timer-mode .dialog {
 
     scroll-snap-align: center;
 
-    font-size: 30px;
+    font-size: 25px;
 
     color: #b8b8b8;
 
@@ -2464,7 +2508,7 @@ body.timer-mode .dialog {
 }
 
 .birthday-column {
-    width: 90px;
+    width: 100px;
     height: 100%;
 
     overflow-y: auto;
@@ -2492,7 +2536,7 @@ body.timer-mode .dialog {
 
     scroll-snap-align: center;
 
-    font-size: 27px;
+    font-size: 25px;
 
     color: #b8b8b8;
 }
@@ -2518,21 +2562,6 @@ body.timer-mode .dialog {
     height: 100%;
 
     z-index: 1;
-}
-
-.profile-wheel-panel {
-    position: relative;
-    z-index: 2;
-
-    width: min(400px, 90vw);
-    height: 210px;
-
-    background: #f5f5f5;
-    color: black;
-
-    overflow: hidden;
-
-    border: 1px solid #555;
 }
 
 /*入力してください*/
@@ -2594,6 +2623,7 @@ body.timer-mode .dialog {
 
 #dd-place-of-birth {
     display: inline-block;
+    white-space: nowrap;
     position: relative;
 
     animation:
@@ -3043,12 +3073,59 @@ body.timer-mode #dialog {
     width: 100%;
     min-height: 100vh;
 
-    padding:
-        24px
-        20px
-        70px;
+    padding: 24px 20px 70px;
 
     box-sizing: border-box;
+}
+
+.user-profile-layout {
+    display: block;
+}
+
+.user-profile-info {
+    width: 100%;
+
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 28px;
+}
+
+.profile-row {
+
+    grid-template-columns:
+            max-content
+            minmax(0, 1fr);
+
+        column-gap: 18px;
+}
+
+.profile-input {
+    min-width: 0;
+    width: 100%;
+
+    background: transparent;
+
+    border: none;
+    outline: none;
+
+    color: #fff;
+    -webkit-text-fill-color: #fff;
+
+    font-family: inherit;
+    font-size: inherit;
+
+    opacity: 1;
+}
+
+.profile-input::placeholder {
+    color: #fff;
+    -webkit-text-fill-color: #fff;
+
+    opacity: 0.65;
 }
 
 /*STATUS・BIRTHDAYなど*/

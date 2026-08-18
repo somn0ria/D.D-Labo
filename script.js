@@ -3135,7 +3135,7 @@ function updateBirthMojibake() {
     }
 
     const length =
-        9 + Math.floor(Math.random() * 8);
+        8 + Math.floor(Math.random() * 4);
 
     ddPlaceOfBirth.textContent =
         createMojibake(length);

@@ -61,7 +61,7 @@ button{
     margin-bottom:2px;
     color:#f8f8f8;
     text-shadow:
-    0 0 6px rgba(180, 220, 255, 0.65);
+    0 0 6px rgba(180, 220, 255, 0.35);
     position:relative;
     z-index: 10;
 
@@ -82,10 +82,10 @@ button{
 .character {
     position: relative;
 
-    width: 320px;
-    height: 430px;
+    width: 340px;
+    height: 450px;
 
-    margin: -10px auto -165px;
+    margin: -10px auto -220px;
 
     display: flex;
     align-items: center;
@@ -216,15 +216,14 @@ button{
     gap:14px;
 
     width:100%;
-    margin-bottom: 28px;
+    margin-bottom: 30px;
+    top: 45px;
     position:relative;
 
     z-index:20;
 }
 
 .menu button{
-    width:90px;
-    height:60px;
 
     background:#eeeeee;
     background:rgba(255, 255, 255, 0.82);
@@ -234,13 +233,10 @@ button{
     box-shadow:0 4px gray;
 
     cursor:pointer;
-
-}
-
-.menu button {
     width: 100%;
     min-width: 0;
-    height: 74px;
+    height: 70px;
+    top:45px;
 }
 
 .menu button:active{
@@ -253,6 +249,7 @@ button{
     height: 180px;
 
     position: relative;
+    top: 45px;
     z-index:20;
 
     background: #f2f2f2;
@@ -836,7 +833,7 @@ button{
             to bottom,
             rgba(255,255,255,0.06) 0px,
             rgba(255,255,255,0.06) 1px,
-            rgba(0,0,0,0.11) 2px,
+            rgba(122, 25, 25, 0.11) 2px,
             rgba(0,0,0,0.15) 4px
         );
 
@@ -862,7 +859,7 @@ button{
 
 /*タイマー画面*/
 body.timer-mode .dialog {
-    transform: translateY(410px);
+    transform: translateY(380px);
 }
 
 .hidden{
@@ -876,22 +873,125 @@ body.timer-mode .dialog {
 
 /*戻る*/
 .timer-back {
-    position: relative;
-    top: -180px;
+    position: absolute;
+
+    top: -160px;
     left: 0px;
 
-    font-family: inherit;
-    font-size: 13px;
+    width: 44px;
+    height: 44px;
 
-    padding: 6px 6px;
-    
+    padding: 0;
+    margin: 0;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    z-index: 50;
 }
 
-.timer-back:active {
-    transform: translate(3px, 3px);
+/*<*/
+.pixel-back-arrow {
+    position: absolute;
+
+    left: 12px;
+    top: 8px;
+
+    width: 4px;
+    height: 4px;
+
+    background: #fff;
+
     box-shadow:
-        inset 2px 2px 0 #777,
-        inset -2px -2px 0 #e0e0e0;
+        -4px  4px #fff,
+        -8px  8px #fff,
+       -12px 12px #fff,
+        -8px 16px #fff,
+        -4px 20px #fff,
+         0px 24px #fff;
+
+    pointer-events: none;
+}
+
+/*タイマー画面ローディング*/
+.timer-loading {
+    position: relative;
+    top:-40px;
+
+    width: 70px;
+    height: 0px;
+
+    margin: 0 auto 20px;
+
+    animation: timer-loading-spin 1.2s steps(8) infinite;
+}
+
+.timer-loading span {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 12px;
+    height: 12px;
+
+    margin-left: -6px;
+    margin-top: -6px;
+
+    border-radius: 50%;
+    background: #fff;
+
+    box-shadow:
+        0 0 5px rgba(255,255,255,0.5);
+}
+
+.timer-loading span:nth-child(1) {
+    transform: rotate(0deg) translateY(-40px);
+    opacity: 1;
+}
+
+.timer-loading span:nth-child(2) {
+    transform: rotate(45deg) translateY(-40px);
+    opacity: .85;
+}
+
+.timer-loading span:nth-child(3) {
+    transform: rotate(90deg) translateY(-40px);
+    opacity: .7;
+}
+
+.timer-loading span:nth-child(4) {
+    transform: rotate(135deg) translateY(-40px);
+    opacity: .55;
+}
+
+.timer-loading span:nth-child(5) {
+    transform: rotate(180deg) translateY(-40px);
+    opacity: .4;
+}
+
+.timer-loading span:nth-child(6) {
+    transform: rotate(225deg) translateY(-40px);
+    opacity: .3;
+}
+
+.timer-loading span:nth-child(7) {
+    transform: rotate(270deg) translateY(-40px);
+    opacity: .2;
+}
+
+.timer-loading span:nth-child(8) {
+    transform: rotate(315deg) translateY(-40px);
+    opacity: .1;
+}
+
+
+@keyframes timer-loading-spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .timer-setting {
@@ -903,10 +1003,10 @@ body.timer-mode .dialog {
 }
 
 .timer-setting-content {
-    transform: translateY(50px);
+    transform: translateY(60px);
 }
 
-/*「集中時間を設定」*/
+/*集中時間を設定*/
 .timer-title {
     font-size: 18px;
     color: white;
@@ -923,7 +1023,7 @@ body.timer-mode .dialog {
     justify-content: center;
     align-items: center;
 
-    gap: 12px;
+    gap: 2px;
 
     width: 100%;
     margin: 10px 0 25px;
@@ -958,7 +1058,7 @@ body.timer-mode .dialog {
     -webkit-text-fill-color: white;
 
     font-family: "BestTen", sans-serif;
-    font-size: 40px;
+    font-size: 35px;
     line-height: 1;
 
     text-align: center;
@@ -987,7 +1087,7 @@ body.timer-mode .dialog {
     color: white;
     -webkit-text-fill-color: white;
 
-    font-size: 20px;
+    font-size: 15px;
 
     text-shadow:
     0 0 6px rgba(180, 220, 255, 0.65);
@@ -995,7 +1095,7 @@ body.timer-mode .dialog {
 
 /*コロン*/
 .time-colon {
-    font-size: 40px;
+    font-size: 35px;
     line-height: 1;
 }
 
@@ -1005,13 +1105,13 @@ body.timer-mode .dialog {
 }
 
 #duration-value {
-    font-size: 40px;
+    font-size: 35px;
     line-height: 1;
 }
 
 #end-hour,
 #end-minute {
-    font-size: 40px;
+    font-size: 35px;
     line-height: 1;
 }
 
@@ -1026,7 +1126,7 @@ body.timer-mode .dialog {
 
     font-family: inherit;
     font-size: 25px;
-    margin: 75px auto;
+    margin: 90px auto;
 }
 
 .timer-start:active {
@@ -1082,7 +1182,7 @@ body.timer-mode .dialog {
 }
 
 #countdown {
-    font-size: 60px;
+    font-size: 50px;
     line-height: 1;
 
     margin-bottom: 30px;
@@ -1248,15 +1348,14 @@ body.timer-mode .dialog {
     position: fixed;
     inset: 0;
 
-    width: 100vw;
+    width: 100%;
     height: 100dvh;
+    box-sizing: border-box;
 
     z-index: 5000;
 
     overflow-y: auto;
     overflow-x: hidden;
-
-    scrollbar-gutter: stable;
 
     background: #f8f8f8;
 
@@ -1279,60 +1378,92 @@ body.timer-mode .dialog {
 }
 
 .record-header {
-    position: sticky;
-    top: 0;
+    position: relative;
 
-    height: 65px;
+    width: 100%;
+    height: 60px;
 
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    display: flex;
     align-items: center;
 
     padding: 0 20px;
 
     background: rgba(0, 0, 0, 0.94);
-
     border-bottom: 1px solid #e0e0e0;
 
     box-sizing: border-box;
-
-    z-index: 20;
 }
 
+/*タイトル*/
 .record-header h2 {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
     margin: 0;
 
     font-size: 25px;
     font-weight: normal;
 
-    text-align: center;
+    white-space: nowrap;
 }
 
+/*戻る*/
 .record-back {
-    justify-self: start;
+    position: absolute;
 
-    font-family: inherit;
-    font-size: 15px;
+    top: 12px;
+    left: 25px;
 
-    padding: 8px 12px;
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
+    margin: 0;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    z-index: 50;
+}
+
+/*<*/
+.pixel-back-arrow {
+    position: absolute;
+
+    left: 12px;
+    top: 8px;
+
+    width: 4px;
+    height: 4px;
 
     background: #e0e0e0;
-    border: 1px solid #222;
-}
 
-.record-back:active {
-    transform: translate(3px, 3px);
     box-shadow:
-        inset 2px 2px 0 #777,
-        inset -2px -2px 0 #e0e0e0;
+        -4px  4px #e0e0e0,
+        -8px  8px #e0e0e0,
+       -12px 12px #e0e0e0,
+        -8px 16px #e0e0e0,
+        -4px 20px #e0e0e0,
+         0px 24px #e0e0e0;
+
+    pointer-events: none;
 }
 
-
+/*+と検索の位置*/
 .record-header-actions {
-    justify-self: end;
+    position:absolute;
+    right:15px;
+    top:55%;
+    transform:translateY(-50%);
 
     display: flex;
-    gap: 9px;
+    gap: 10px;
 }
 
 .record-icon-button {
@@ -2232,24 +2363,53 @@ body.timer-mode .dialog {
     background: #0004ff;
     color: #e0e0e0;
 
-    padding: 34px 42px 80px;
+    padding: 90px 35px 80px;
 }
 
 
 /*プロフィール戻る*/
+/*戻る*/
 .profile-back {
-    padding: 4px 8px;
-    font-family: inherit;
-    font-size: 15px;
-    margin-bottom: 20px;
-    
+    position: absolute;
+
+    top: 30px;
+    left: 30px;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
+    margin: 0;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    z-index: 50;
 }
 
-.profile-back:active {
-    transform: translate(3px, 3px);
+/*<*/
+.pixel-back-arrow {
+    position: absolute;
+
+    left: 12px;
+    top: 8px;
+
+    width: 4px;
+    height: 4px;
+
+    background: #e0e0e0;
+
     box-shadow:
-        inset 2px 2px 0 #777,
-        inset -2px -2px 0 #e0e0e0;
+        -4px  4px #e0e0e0,
+        -8px  8px #e0e0e0,
+       -12px 12px #e0e0e0,
+        -8px 16px #e0e0e0,
+        -4px 20px #e0e0e0,
+         0px 24px #e0e0e0;
+
+    pointer-events: none;
 }
 
 /*USER PROFILE/ABOUT D.D*/
@@ -2564,7 +2724,7 @@ body.timer-mode .dialog {
     z-index: 1;
 }
 
-/*入力してください*/
+/*入力*/
 .profile-input::placeholder {
     color: rgba(255, 255, 255, 0.55);
 }
@@ -2572,45 +2732,6 @@ body.timer-mode .dialog {
 .profile-select.is-placeholder {
     color: rgba(255, 255, 255, 0.55);
 }
-
-/*プロフィール画面スキャンライン*/
-.profile-scanline {
-    position: fixed;
-
-    left: 0;
-    top: -10%;
-
-    width: 100%;
-    height: 55px;
-
-    background: linear-gradient(
-        to bottom,
-        transparent,
-        rgba(255, 255, 255, 0.04),
-        rgba(255, 255, 255, 0.18),
-        rgba(255, 255, 255, 0.04),
-        transparent
-    );
-
-    pointer-events: none;
-
-    z-index: 999;
-
-    animation:
-        profile-scan 5.5s linear infinite;
-}
-
-@keyframes profile-scan {
-
-    from {
-        transform: translateY(-80px);
-    }
-
-    to {
-        transform: translateY(115vh);
-    }
-}
-
 
 .dd-jitter {
     display: inline-block;
@@ -2861,8 +2982,8 @@ body.timer-mode .dialog {
 
     .character {
     width: 100%;
-    max-width: 320px;
-    height: 430px;
+    max-width: 350px;
+    height: 460px;
 
     margin: -10px auto -175px;
 
@@ -2953,7 +3074,7 @@ body.timer-mode .dialog {
     }
 
     .next-button {
-        top: 5px;
+        top: 4px;
         right: 5px;
         width: 24px;
         height: 20px;
@@ -2967,7 +3088,7 @@ body.timer-mode #dialog {
 
     left: 50%;
     right: auto;
-    top:400px; /*タイマーセリフ位置*/
+    top:470px; /*タイマーセリフ位置*/
 
     transform: translateX(-50%);
 }
@@ -3073,7 +3194,7 @@ body.timer-mode #dialog {
     width: 100%;
     min-height: 100vh;
 
-    padding: 24px 20px 70px;
+    padding: 90px 30px 70px;
 
     box-sizing: border-box;
 }

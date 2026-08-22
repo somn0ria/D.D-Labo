@@ -117,12 +117,11 @@
 
     <!--プロフィール画面-->
 <div id="profile-screen" class="profile-screen hidden">
-    <div class="profile-scanline"></div>
     <div class="profile-noise"></div>
 
-    <button id="profile-back" class="profile-back" type="button">
-        ←戻る
-    </button>
+    <button id="profile-back" class="profile-back" type="button" aria-label="戻る">
+    <span class="pixel-back-arrow" aria-hidden="true"></span>
+</button>
 
 
     <section class="user-profile-section">
@@ -145,7 +144,7 @@
         type="text"
         maxlength="20"
         autocomplete="off"
-        placeholder="入力してください"
+        placeholder="入力"
     >
 </div>
 
@@ -170,7 +169,7 @@
         type="text"
         maxlength="60"
         autocomplete="off"
-        placeholder="入力してください"
+        placeholder="入力"
     >
 </div>
 
@@ -312,12 +311,22 @@
 <!--タイマー画面-->
     <div id="timer-screen" class="hidden">
 
-        <button id="timer-back" class="timer-back">
-            ← 戻る
-        </button>
+        <button id="timer-back" class="timer-back" type="button" aria-label="戻る">
+    <span class="pixel-back-arrow" aria-hidden="true"></span>
+</button>
 
 
         <div class="timer-setting">
+            <div class="timer-loading" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
             <div class="timer-setting-content">
 
             <div class="timer-title">
@@ -421,9 +430,10 @@
 
     <header class="record-header">
 
-        <button id="record-back" class="record-back">
-            ←戻る
-        </button>
+        <button id="record-back" class="record-back" type="button" aria-label="戻る">
+    <span class="pixel-back-arrow" aria-hidden="true"></span>
+</button>
+
 
         <h2>記録</h2>
 

@@ -217,7 +217,7 @@ button{
 
     width:100%;
     margin-bottom: 30px;
-    top: 45px;
+    top: 10px;
     position:relative;
 
     z-index:20;
@@ -249,7 +249,7 @@ button{
     height: 180px;
 
     position: relative;
-    top: 45px;
+    top: 10px;
     z-index:20;
 
     background: #f2f2f2;
@@ -1126,7 +1126,7 @@ body.timer-mode .dialog {
 
     font-family: inherit;
     font-size: 25px;
-    margin: 90px auto;
+    margin: 80px auto;
 }
 
 .timer-start:active {
@@ -1357,9 +1357,10 @@ body.timer-mode .dialog {
     overflow-y: auto;
     overflow-x: hidden;
 
-    background: #f8f8f8;
+    background: #0004FF;
 
     font-family: "BestTen", sans-serif;
+    scrollbar-width: none;
     color: #e0e0e0;
 }
 
@@ -1482,14 +1483,17 @@ body.timer-mode .dialog {
 }
 
 .record-tabs {
-    position: sticky;
-    top: 55px;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    top: auto;
 
     display: flex;
     justify-content: space-around;
     align-items: center;
 
     padding: 12px 15px;
+    box-sizing: border-box;
 
     background: rgba(0, 0, 0, 0.92);
 
@@ -1517,8 +1521,9 @@ body.timer-mode .dialog {
 
 .record-list {
     width: min(520px, 94vw);
-
+    max-width: 100%;
     margin: 30px auto 100px;
+    box-sizing: border-box;
 }
 
 .record-item {
@@ -3088,9 +3093,17 @@ body.timer-mode #dialog {
 
     left: 50%;
     right: auto;
-    top:470px; /*タイマーセリフ位置*/
+    top:435px; /*タイマーセリフ位置*/
 
     transform: translateX(-50%);
+}
+
+.timer-start{
+    transform: translateY(30px);
+}
+
+.timer-setting-content {
+    transform: translateY(70px);
 }
 
 #running-screen {
